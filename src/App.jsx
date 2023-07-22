@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-      <div>Digite o nome da cidade que deseja saber o clima:</div>
+      <div>Digite o nome da cidade que deseja saber o clima: </div>
       <input type="text" onChange={e => setCityName(e.target.value)} />
       <button onClick={search}>Procurar</button>
       <p>Cidade: {cityName}</p>
