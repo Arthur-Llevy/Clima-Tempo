@@ -9,10 +9,10 @@ function App() {
   const [windSpeed, setWindSpeed] = useState();
 
   const search = async () => {
-    const latAndLonOfCity = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${import.meta.env.VITE_weather_API_KEY}`);
+    const latAndLonOfCity = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${import.meta.env.VITE_weather_API_KEY}`);
     const jsonResponse = await latAndLonOfCity.json();
 
-    const weather = await fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${jsonResponse[0].lat}&lon=${jsonResponse[0].lon}&appid=${import.meta.env.VITE_weather_API_KEY}&lang=pt_br`);
+    const weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${jsonResponse[0].lat}&lon=${jsonResponse[0].lon}&appid=${import.meta.env.VITE_weather_API_KEY}&lang=pt_br`);
     const weatherResponse = await weather.json();
 
     setClimate(weatherResponse.weather[0].description);
